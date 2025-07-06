@@ -21,7 +21,7 @@ app.use((req, res, next) => {
 });
 
 app.get("/places", async (req, res) => {
-  const fileContent = await fs.readFile("./data/places.json");
+  const fileContent = await fs.readFile("./api/places.json");
 
   const placesData = JSON.parse(fileContent);
 
@@ -29,7 +29,7 @@ app.get("/places", async (req, res) => {
 });
 
 app.get("/user-places", async (req, res) => {
-  const fileContent = await fs.readFile("./data/user-places.json");
+  const fileContent = await fs.readFile("./api/user-places.json");
 
   const places = JSON.parse(fileContent);
 
@@ -39,7 +39,7 @@ app.get("/user-places", async (req, res) => {
 app.put("/user-places", async (req, res) => {
   const places = req.body.places;
 
-  await fs.writeFile("./data/user-places.json", JSON.stringify(places));
+  await fs.writeFile("./api/user-places.json", JSON.stringify(places));
 
   res.status(200).json({ message: "User places updated!" });
 });
