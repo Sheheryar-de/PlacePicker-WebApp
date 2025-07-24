@@ -20,7 +20,7 @@ export default function Places({
             <li key={place.id} className="place-item">
               <button onClick={() => onSelectPlace(place)}>
                 <img
-                  src={`https://place-picker-web-app.vercel.app/${place.image.src}`}
+                  src={`http://localhost:3000/${place.image.src}`}
                   alt={place.image.alt}
                 />
                 <h3>{place.title}</h3>
